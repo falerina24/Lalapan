@@ -1,0 +1,1213 @@
+CRITICAL - 2024-12-06 07:51:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "login.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(22): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 07:52:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/index.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/index.php')
+ 2 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('auth/index', [], true)
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/login', [], true)
+ 4 APPPATH\Controllers\Auth.php(22): view('/login')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 07:55:09 --> mysqli_sql_exception: Unknown column 'pembayaran.id' in 'field list' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembaya...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#15 {main}
+CRITICAL - 2024-12-06 07:55:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pembayaran.id' in 'field list'
+[Method: GET, Route: pembayaran]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 07:55:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pembayaran.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 07:55:09 --> [Caused by] mysqli_sql_exception: Unknown column 'pembayaran.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 08:08:35 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'lalapan77' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:187
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(187): mysqli->real_connect('localhost', 'root', '', 'lalapan77', 3306, '', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `id_pemb...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'lalapan77' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `id_pemb...', Array, false)
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#14 {main}
+CRITICAL - 2024-12-06 08:08:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'lalapan77'
+[Method: GET, Route: pembayaran]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 08:08:59 --> mysqli_sql_exception: Unknown column 'id_pembayaran' in 'field list' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id_pemb...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pemb...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pemb...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `id_pemb...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#15 {main}
+CRITICAL - 2024-12-06 08:08:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_pembayaran' in 'field list'
+[Method: GET, Route: pembayaran]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:08:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_pembayaran' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pembayaran` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pembayaran` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:08:59 --> [Caused by] mysqli_sql_exception: Unknown column 'id_pembayaran' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `id_pembayaran` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pembayaran` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pembayaran` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:15:34 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:16:35 --> ErrorException: Undefined variable $id
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:17:08 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:18:19 --> ErrorException: Undefined variable $pesanan
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:19:09 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:19:11 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:19:12 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:19:13 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:19:14 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:19:15 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 08:19:59 --> mysqli_sql_exception: Unknown column 'pesanan.id' in 'field list' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembaya...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#15 {main}
+CRITICAL - 2024-12-06 08:19:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pesanan.id' in 'field list'
+[Method: GET, Route: pembayaran]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:19:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pesanan.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:19:59 --> [Caused by] mysqli_sql_exception: Unknown column 'pesanan.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 08:20:37 --> mysqli_sql_exception: Unknown column 'pesana_id' in 'field list' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembaya...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#15 {main}
+CRITICAL - 2024-12-06 08:20:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pesana_id' in 'field list'
+[Method: GET, Route: pembayaran]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesana_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesana_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:20:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pesana_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesana_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesana_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesana_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesana_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesana_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesana_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:20:37 --> [Caused by] mysqli_sql_exception: Unknown column 'pesana_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesana_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesana_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesana_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesana_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesana_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesana_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesana_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesana_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 08:20:47 --> mysqli_sql_exception: Column 'pesanan_id' in field list is ambiguous in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembaya...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#15 {main}
+CRITICAL - 2024-12-06 08:20:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'pesanan_id' in field list is ambiguous
+[Method: GET, Route: pembayaran]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:20:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'pesanan_id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:20:47 --> [Caused by] mysqli_sql_exception: Column 'pesanan_id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan_id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, `pembayaran`.`waktu_pembayaran`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan_id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\pembayaranModel.php(43): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\PembayaranController.php(15): App\Models\PembayaranModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 08:22:05 --> mysqli_sql_exception: Unknown column 'pesanan.id' in 'field list' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pesanan...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PesananController->index()
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#15 {main}
+CRITICAL - 2024-12-06 08:22:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pesanan.id' in 'field list'
+[Method: GET, Route: pesanan]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:22:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pesanan.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:22:05 --> [Caused by] mysqli_sql_exception: Unknown column 'pesanan.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 08:22:42 --> mysqli_sql_exception: Unknown column 'pesanan.id' in 'field list' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pesanan...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PesananController->index()
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#15 {main}
+CRITICAL - 2024-12-06 08:22:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pesanan.id' in 'field list'
+[Method: GET, Route: pesanan]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:22:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pesanan.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:22:42 --> [Caused by] mysqli_sql_exception: Unknown column 'pesanan.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 08:22:44 --> mysqli_sql_exception: Unknown column 'pesanan.id' in 'field list' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pesanan...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PesananController->index()
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#15 {main}
+CRITICAL - 2024-12-06 08:22:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pesanan.id' in 'field list'
+[Method: GET, Route: pesanan]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:22:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pesanan.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:22:44 --> [Caused by] mysqli_sql_exception: Unknown column 'pesanan.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `id_pesanan`, `pesanan`.`waktu_pesanan`, `pesanan`.`total`, `pelanggan`.`nama`, `meja`.`nomor_meja`, `pesanan`.`status`
+FROM `pesanan`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\pesananModel.php(70): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\PesananController.php(19): App\Models\PesananModel->getAllPesanan()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:23:31 --> ErrorException: Undefined array key "pesanan_id"
+[Method: GET, Route: pesanan]
+in APPPATH\Controllers\PesananController.php on line 22.
+ 1 APPPATH\Controllers\PesananController.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pesanan_id"', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Controllers\\PesananController.php', 22)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 08:25:03 --> ErrorException: Undefined array key "pesanan_id"
+[Method: GET, Route: pesanan]
+in APPPATH\Views\pesanan\index.php on line 69.
+ 1 APPPATH\Views\pesanan\index.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pesanan_id"', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pesanan\\index.php', 69)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pesanan\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pesanan/index', [], true)
+ 5 APPPATH\Controllers\PesananController.php(25): view('pesanan/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 08:28:00 --> mysqli_sql_exception: Column 'nama' cannot be null in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pesananModel.php(19): CodeIgniter\Model->insert(Array)
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PesananController.php(70): App\Models\PesananModel->createPesanan(Array, Array, Array)
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PesananController->store()
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#16 {main}
+ERROR - 2024-12-06 08:28:00 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`lalapan`.`pesanan`, CONSTRAINT `pesanan_ibfk_2` FOREIGN KEY (`pelanggan_id`) REFERENCES `pelanggan` (`id`) ON DELETE SET NULL) in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pesananModel.php(21): CodeIgniter\Model->insert(Array, true)
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PesananController.php(70): App\Models\PesananModel->createPesanan(Array, Array, Array)
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PesananController->store()
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#16 {main}
+ERROR - 2024-12-06 08:28:00 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `it...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `it...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `it...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `it...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pesananModel.php(38): CodeIgniter\Model->insert(Array)
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PesananController.php(70): App\Models\PesananModel->createPesanan(Array, Array, Array)
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PesananController->store()
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#16 {main}
+ERROR - 2024-12-06 08:28:00 --> mysqli_sql_exception: Unknown column 'id_pesanan' in 'where clause' in C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT SUM(`har...', 0)
+#1 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`har...')
+#2 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`har...')
+#3 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`har...', Array, false)
+#4 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Models\pesananModel.php(43): CodeIgniter\BaseModel->first()
+#7 C:\Users\satri\OneDrive\Dokumen\Lalapan\app\Controllers\PesananController.php(70): App\Models\PesananModel->createPesanan(Array, Array, Array)
+#8 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(933): App\Controllers\PesananController->store()
+#9 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+#10 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\satri\OneDrive\Dokumen\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\satri\OneDrive\Dokumen\Lalapan\system\rewrite.php(44): require_once('C:\\Users\\satri\\...')
+#15 {main}
+CRITICAL - 2024-12-06 08:28:00 --> Error: Call to a member function getFirstRow() on bool
+[Method: POST, Route: pesanan/store]
+in SYSTEMPATH\Model.php on line 330.
+ 1 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 2 APPPATH\Models\pesananModel.php(43): CodeIgniter\BaseModel->first()
+ 3 APPPATH\Controllers\PesananController.php(70): App\Models\PesananModel->createPesanan([...], [...], [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 09:07:26 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 09:08:38 --> ErrorException: Undefined variable $id_pesanan
+[Method: GET, Route: pembayaran/create]
+in APPPATH\Views\pembayaran\create.php on line 7.
+ 1 APPPATH\Views\pembayaran\create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_pesanan', 'C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\app\\Views\\pembayaran\\create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/create', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(26): view('pembayaran/create')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\satri\\OneDrive\\Dokumen\\Lalapan\\public\\index.php')
+ERROR - 2024-12-06 09:45:53 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'lalapan' in C:\xampp\htdocs\Lalapan\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\Lalapan\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'lalapan', 3306, '', 0)
+#1 C:\xampp\htdocs\Lalapan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Lalapan\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Lalapan\system\Database\BaseBuilder.php(1673): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', NULL, false)
+#4 C:\xampp\htdocs\Lalapan\system\Model.php(930): CodeIgniter\Database\BaseBuilder->countAll()
+#5 C:\xampp\htdocs\Lalapan\app\Controllers\DashboardController.php(22): CodeIgniter\Model->__call('countAll', Array)
+#6 C:\xampp\htdocs\Lalapan\system\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+#7 C:\xampp\htdocs\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+#8 C:\xampp\htdocs\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\Lalapan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'lalapan' in C:\xampp\htdocs\Lalapan\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\Lalapan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Lalapan\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Lalapan\system\Database\BaseBuilder.php(1673): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', NULL, false)
+#3 C:\xampp\htdocs\Lalapan\system\Model.php(930): CodeIgniter\Database\BaseBuilder->countAll()
+#4 C:\xampp\htdocs\Lalapan\app\Controllers\DashboardController.php(22): CodeIgniter\Model->__call('countAll', Array)
+#5 C:\xampp\htdocs\Lalapan\system\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+#6 C:\xampp\htdocs\Lalapan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+#7 C:\xampp\htdocs\Lalapan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\Lalapan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\Lalapan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\Lalapan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\Lalapan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-12-06 09:45:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'lalapan'
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1673): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows` FROM `pelanggan`', null, false)
+ 3 SYSTEMPATH\Model.php(930): CodeIgniter\Database\BaseBuilder->countAll()
+ 4 APPPATH\Controllers\DashboardController.php(22): CodeIgniter\Model->__call('countAll', [])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 09:48:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: pembayaran/store]
+in SYSTEMPATH\Model.php on line 456.
+ 1 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Models\pembayaranModel.php(22): CodeIgniter\Model->update(null, [...])
+ 4 APPPATH\Controllers\PembayaranController.php(38): App\Models\PembayaranModel->prosesPembayaran([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->store()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Lalapan\\public\\index.php')
+CRITICAL - 2024-12-06 09:49:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: pembayaran/store]
+in SYSTEMPATH\Model.php on line 456.
+ 1 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Models\pembayaranModel.php(22): CodeIgniter\Model->update(null, [...])
+ 4 APPPATH\Controllers\PembayaranController.php(38): App\Models\PembayaranModel->prosesPembayaran([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->store()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Lalapan\\public\\index.php')

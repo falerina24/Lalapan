@@ -1,0 +1,676 @@
+CRITICAL - 2024-10-05 05:38:33 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran]
+in APPPATH\Views\pembayaran\index.php on line 6.
+ 1 APPPATH\Views\pembayaran\index.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php', 6)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/index', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(14): view('pembayaran/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 05:42:33 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran]
+in APPPATH\Views\pembayaran\index.php on line 6.
+ 1 APPPATH\Views\pembayaran\index.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php', 6)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/index', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(14): view('pembayaran/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 06:01:26 --> ErrorException: foreach() argument must be of type array|object, null given
+[Method: POST, Route: pesanan/store]
+in APPPATH\Controllers\PesananController.php on line 58.
+ 1 APPPATH\Controllers\PesananController.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\resto\\app\\Controllers\\PesananController.php', 58)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->store()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 06:01:58 --> ErrorException: foreach() argument must be of type array|object, null given
+[Method: POST, Route: pesanan/store]
+in APPPATH\Controllers\PesananController.php on line 58.
+ 1 APPPATH\Controllers\PesananController.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\resto\\app\\Controllers\\PesananController.php', 58)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->store()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+ERROR - 2024-10-05 06:14:09 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN ...' at line 1 in C:\xampp\htdocs\resto\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\resto\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pesanan...', 0)
+#1 C:\xampp\htdocs\resto\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan...')
+#2 C:\xampp\htdocs\resto\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan...')
+#3 C:\xampp\htdocs\resto\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan...', Array, false)
+#4 C:\xampp\htdocs\resto\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\resto\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\resto\app\Models\pesananModel.php(73): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\resto\app\Controllers\PesananController.php(81): App\Models\PesananModel->getPesanan('29')
+#8 C:\xampp\htdocs\resto\system\CodeIgniter.php(933): App\Controllers\PesananController->detail('29')
+#9 C:\xampp\htdocs\resto\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+#10 C:\xampp\htdocs\resto\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\resto\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\resto\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\resto\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\resto\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-10-05 06:14:09 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN ...' at line 1
+[Method: GET, Route: pesanan/detail/29]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`status`, `pesanan`.`total`, `pesanan`.`waktu_pesanan`, `meja`.`nomor_meja`, `meja`.`id` as `meja_id pelanggan`.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+WHERE `pesanan`.`id` = :pesanan.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\pesananModel.php(73): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\PesananController.php(81): App\Models\PesananModel->getPesanan('29')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->detail('29')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 06:14:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN ...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`status`, `pesanan`.`total`, `pesanan`.`waktu_pesanan`, `meja`.`nomor_meja`, `meja`.`id` as `meja_id pelanggan`.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+WHERE `pesanan`.`id` = \'29\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`status`, `pesanan`.`total`, `pesanan`.`waktu_pesanan`, `meja`.`nomor_meja`, `meja`.`id` as `meja_id pelanggan`.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+WHERE `pesanan`.`id` = \'29\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`status`, `pesanan`.`total`, `pesanan`.`waktu_pesanan`, `meja`.`nomor_meja`, `meja`.`id` as `meja_id pelanggan`.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+WHERE `pesanan`.`id` = :pesanan.id:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\pesananModel.php(73): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\PesananController.php(81): App\Models\PesananModel->getPesanan('29')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->detail('29')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 06:14:09 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN ...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`status`, `pesanan`.`total`, `pesanan`.`waktu_pesanan`, `meja`.`nomor_meja`, `meja`.`id` as `meja_id pelanggan`.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+WHERE `pesanan`.`id` = \'29\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`status`, `pesanan`.`total`, `pesanan`.`waktu_pesanan`, `meja`.`nomor_meja`, `meja`.`id` as `meja_id pelanggan`.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+WHERE `pesanan`.`id` = \'29\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`status`, `pesanan`.`total`, `pesanan`.`waktu_pesanan`, `meja`.`nomor_meja`, `meja`.`id` as `meja_id pelanggan`.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+WHERE `pesanan`.`id` = \'29\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pesanan`.`id` as `pesanan_id`, `pesanan`.`status`, `pesanan`.`total`, `pesanan`.`waktu_pesanan`, `meja`.`nomor_meja`, `meja`.`id` as `meja_id pelanggan`.`nama`
+FROM `pesanan`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+WHERE `pesanan`.`id` = :pesanan.id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\pesananModel.php(73): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\PesananController.php(81): App\Models\PesananModel->getPesanan('29')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->detail('29')
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 06:35:05 --> TypeError: CodeIgniter\BaseModel::timeToString(): Argument #1 ($properties) must be of type array, string given, called in C:\xampp\htdocs\resto\system\BaseModel.php on line 1875
+[Method: POST, Route: pembayaran/store]
+in SYSTEMPATH\BaseModel.php on line 1762.
+ 1 SYSTEMPATH\BaseModel.php(1875): CodeIgniter\BaseModel->timeToString('100000')
+ 2 SYSTEMPATH\BaseModel.php(806): CodeIgniter\BaseModel->transformDataToArray('100000', 'insert')
+ 3 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert('100000', true)
+ 4 APPPATH\Models\pembayaranModel.php(20): CodeIgniter\Model->insert('100000')
+ 5 APPPATH\Controllers\PembayaranController.php(32): App\Models\PembayaranModel->prosesPembayaran([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 06:43:53 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran]
+in APPPATH\Views\pembayaran\index.php on line 6.
+ 1 APPPATH\Views\pembayaran\index.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php', 6)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/index', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(14): view('pembayaran/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+ERROR - 2024-10-05 06:56:08 --> mysqli_sql_exception: Unknown column 'pelanggan.nama_pelanggan' in 'field list' in C:\xampp\htdocs\resto\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\resto\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembaya...', 0)
+#1 C:\xampp\htdocs\resto\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 C:\xampp\htdocs\resto\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 C:\xampp\htdocs\resto\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 C:\xampp\htdocs\resto\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\resto\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\resto\app\Models\pembayaranModel.php(48): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\resto\app\Controllers\PembayaranController.php(13): App\Models\PembayaranModel->getAll()
+#8 C:\xampp\htdocs\resto\system\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+#9 C:\xampp\htdocs\resto\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+#10 C:\xampp\htdocs\resto\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\resto\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\resto\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\resto\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\resto\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-10-05 06:56:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pelanggan.nama_pelanggan' in 'field list'
+[Method: GET, Route: pembayaran]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`quantity`, `kategori`.`nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\pembayaranModel.php(48): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\PembayaranController.php(13): App\Models\PembayaranModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 06:56:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pelanggan.nama_pelanggan' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`quantity`, `kategori`.`nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`quantity`, `kategori`.`nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`quantity`, `kategori`.`nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\pembayaranModel.php(48): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\PembayaranController.php(13): App\Models\PembayaranModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 06:56:08 --> [Caused by] mysqli_sql_exception: Unknown column 'pelanggan.nama_pelanggan' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`quantity`, `kategori`.`nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`quantity`, `kategori`.`nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`quantity`, `kategori`.`nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`quantity`, `kategori`.`nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\pembayaranModel.php(48): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\PembayaranController.php(13): App\Models\PembayaranModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+ERROR - 2024-10-05 06:58:03 --> mysqli_sql_exception: Unknown column 'produk.nama_produk' in 'field list' in C:\xampp\htdocs\resto\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\resto\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembaya...', 0)
+#1 C:\xampp\htdocs\resto\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 C:\xampp\htdocs\resto\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 C:\xampp\htdocs\resto\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 C:\xampp\htdocs\resto\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\resto\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\resto\app\Models\pembayaranModel.php(48): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\resto\app\Controllers\PembayaranController.php(13): App\Models\PembayaranModel->getAll()
+#8 C:\xampp\htdocs\resto\system\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+#9 C:\xampp\htdocs\resto\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+#10 C:\xampp\htdocs\resto\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\resto\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\resto\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\resto\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\resto\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-10-05 06:58:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'produk.nama_produk' in 'field list'
+[Method: GET, Route: pembayaran]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`kuantitas`, `kategori`.`nama` as `nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\pembayaranModel.php(48): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\PembayaranController.php(13): App\Models\PembayaranModel->getAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 06:58:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'produk.nama_produk' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`kuantitas`, `kategori`.`nama` as `nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`kuantitas`, `kategori`.`nama` as `nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`kuantitas`, `kategori`.`nama` as `nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\pembayaranModel.php(48): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\PembayaranController.php(13): App\Models\PembayaranModel->getAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 06:58:03 --> [Caused by] mysqli_sql_exception: Unknown column 'produk.nama_produk' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`kuantitas`, `kategori`.`nama` as `nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`kuantitas`, `kategori`.`nama` as `nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`kuantitas`, `kategori`.`nama` as `nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran`.`id` as `pembayaran_id`, `pembayaran`.`jumlah` as `jumlah_dibayar`, `pesanan`.`id` as `pesanan_id`, `pesanan`.`total` as `total_tagihan`, (pembayaran.jumlah - pesanan.total) as kembalian, `pelanggan`.`nama` as `nama_pelanggan`, `meja`.`nomor_meja`, `produk`.`nama_produk`, `produk`.`harga` as `harga_produk`, `item_pesanan`.`kuantitas`, `kategori`.`nama` as `nama_kategori`
+FROM `pembayaran`
+JOIN `pesanan` ON `pesanan`.`id` = `pembayaran`.`pesanan_id`
+JOIN `pelanggan` ON `pelanggan`.`id` = `pesanan`.`pelanggan_id`
+JOIN `meja` ON `meja`.`id` = `pesanan`.`meja_id`
+JOIN `item_pesanan` ON `item_pesanan`.`pesanan_id` = `pesanan`.`id`
+JOIN `produk` ON `produk`.`id` = `item_pesanan`.`produk_id`
+JOIN `kategori` ON `kategori`.`id` = `produk`.`kategori_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\pembayaranModel.php(48): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\PembayaranController.php(13): App\Models\PembayaranModel->getAll()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 07:11:24 --> ErrorException: Undefined array key "pesanan_id"
+[Method: GET, Route: pembayaran]
+in APPPATH\Controllers\PembayaranController.php on line 17.
+ 1 APPPATH\Controllers\PembayaranController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pesanan_id"', 'C:\\xampp\\htdocs\\resto\\app\\Controllers\\PembayaranController.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 07:12:16 --> ErrorException: Undefined array key "pesanan_id"
+[Method: GET, Route: pembayaran]
+in APPPATH\Controllers\PembayaranController.php on line 18.
+ 1 APPPATH\Controllers\PembayaranController.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pesanan_id"', 'C:\\xampp\\htdocs\\resto\\app\\Controllers\\PembayaranController.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 07:56:03 --> ErrorException: Undefined variable $pesanan_id
+[Method: GET, Route: pembayaran]
+in APPPATH\Views\pembayaran\index.php on line 6.
+ 1 APPPATH\Views\pembayaran\index.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pesanan_id', 'C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php', 6)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/index', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(20): view('pembayaran/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 07:56:35 --> TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given
+[Method: GET, Route: pembayaran]
+in APPPATH\Views\pembayaran\index.php on line 22.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/index', [], true)
+ 4 APPPATH\Controllers\PembayaranController.php(20): view('pembayaran/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 07:56:35 --> [Caused by] ErrorException: Undefined variable $data
+in APPPATH\Views\pembayaran\index.php on line 22.
+ 1 APPPATH\Views\pembayaran\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/index', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(20): view('pembayaran/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 07:57:26 --> TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given
+[Method: GET, Route: pembayaran]
+in APPPATH\Views\pembayaran\index.php on line 22.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/index', [], true)
+ 4 APPPATH\Controllers\PembayaranController.php(20): view('pembayaran/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 07:57:26 --> [Caused by] ErrorException: Undefined variable $data
+in APPPATH\Views\pembayaran\index.php on line 22.
+ 1 APPPATH\Views\pembayaran\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/index', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(20): view('pembayaran/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 07:57:36 --> ErrorException: Undefined variable $data
+[Method: GET, Route: pembayaran]
+in APPPATH\Views\pembayaran\index.php on line 22.
+ 1 APPPATH\Views\pembayaran\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/index', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(20): view('pembayaran/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 07:57:49 --> ErrorException: Undefined variable $data
+[Method: GET, Route: pembayaran]
+in APPPATH\Views\pembayaran\index.php on line 22.
+ 1 APPPATH\Views\pembayaran\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pembayaran/index', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(20): view('pembayaran/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 08:12:52 --> ErrorException: Undefined array key "nama_pelangga"
+[Method: GET, Route: pembayaran/detail/1]
+in APPPATH\Views\pembayaran\detail.php on line 7.
+ 1 APPPATH\Views\pembayaran\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_pelangga"', 'C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\resto\\app\\Views\\pembayaran\\detail.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/pembayaran/detail', [], true)
+ 5 APPPATH\Controllers\PembayaranController.php(52): view('/pembayaran/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 08:13:05 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: pembayaran/detail/1]
+in APPPATH\Controllers\PembayaranController.php on line 48.
+ 1 APPPATH\Controllers\PembayaranController.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\resto\\app\\Controllers\\PembayaranController.php', 48)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->detail('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 08:14:21 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: pembayaran/detail/2]
+in APPPATH\Controllers\PembayaranController.php on line 47.
+ 1 APPPATH\Controllers\PembayaranController.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\resto\\app\\Controllers\\PembayaranController.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->detail('2')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 08:16:06 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: pembayaran/detail/3]
+in APPPATH\Controllers\PembayaranController.php on line 47.
+ 1 APPPATH\Controllers\PembayaranController.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\resto\\app\\Controllers\\PembayaranController.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PembayaranController->detail('3')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PembayaranController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 08:39:49 --> TypeError: CodeIgniter\BaseModel::timeToString(): Argument #1 ($properties) must be of type array, string given, called in C:\xampp\htdocs\resto\system\BaseModel.php on line 1875
+[Method: POST, Route: pesanan/store]
+in SYSTEMPATH\BaseModel.php on line 1762.
+ 1 SYSTEMPATH\BaseModel.php(1875): CodeIgniter\BaseModel->timeToString('rosi')
+ 2 SYSTEMPATH\BaseModel.php(806): CodeIgniter\BaseModel->transformDataToArray('rosi', 'insert')
+ 3 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert('rosi', true)
+ 4 APPPATH\Models\pesananModel.php(19): CodeIgniter\Model->insert('rosi')
+ 5 APPPATH\Controllers\PesananController.php(68): App\Models\PesananModel->createPesanan([...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 08:41:17 --> TypeError: CodeIgniter\BaseModel::timeToString(): Argument #1 ($properties) must be of type array, string given, called in C:\xampp\htdocs\resto\system\BaseModel.php on line 1875
+[Method: POST, Route: pesanan/store]
+in SYSTEMPATH\BaseModel.php on line 1762.
+ 1 SYSTEMPATH\BaseModel.php(1875): CodeIgniter\BaseModel->timeToString('rosi')
+ 2 SYSTEMPATH\BaseModel.php(806): CodeIgniter\BaseModel->transformDataToArray('rosi', 'insert')
+ 3 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert('rosi', true)
+ 4 APPPATH\Models\pesananModel.php(20): CodeIgniter\Model->insert('rosi')
+ 5 APPPATH\Controllers\PesananController.php(68): App\Models\PesananModel->createPesanan([...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 08:43:19 --> TypeError: CodeIgniter\BaseModel::timeToString(): Argument #1 ($properties) must be of type array, string given, called in C:\xampp\htdocs\resto\system\BaseModel.php on line 1875
+[Method: POST, Route: pesanan/store]
+in SYSTEMPATH\BaseModel.php on line 1762.
+ 1 SYSTEMPATH\BaseModel.php(1875): CodeIgniter\BaseModel->timeToString('rosi')
+ 2 SYSTEMPATH\BaseModel.php(806): CodeIgniter\BaseModel->transformDataToArray('rosi', 'insert')
+ 3 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert('rosi', true)
+ 4 APPPATH\Models\pesananModel.php(20): CodeIgniter\Model->insert('rosi', true)
+ 5 APPPATH\Controllers\PesananController.php(68): App\Models\PesananModel->createPesanan([...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+CRITICAL - 2024-10-05 08:45:11 --> TypeError: CodeIgniter\BaseModel::timeToString(): Argument #1 ($properties) must be of type array, string given, called in C:\xampp\htdocs\resto\system\BaseModel.php on line 1875
+[Method: POST, Route: pesanan/store]
+in SYSTEMPATH\BaseModel.php on line 1762.
+ 1 SYSTEMPATH\BaseModel.php(1875): CodeIgniter\BaseModel->timeToString('rosi')
+ 2 SYSTEMPATH\BaseModel.php(806): CodeIgniter\BaseModel->transformDataToArray('rosi', 'insert')
+ 3 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert('rosi', true)
+ 4 APPPATH\Models\pesananModel.php(20): CodeIgniter\Model->insert('rosi', true)
+ 5 APPPATH\Controllers\PesananController.php(68): App\Models\PesananModel->createPesanan([...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\resto\\public\\index.php')
+INFO - 2024-10-05 10:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
